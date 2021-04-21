@@ -10,7 +10,8 @@ class PokemonsApi {
   Future<PokemonList> getPokemons() async {
     try {
       final response = await _restClient.get(Endpoints.getPokemons);
-      return PokemonList.fromJson(response);
+      final pokemons = PokemonList.fromJson(response);
+      return pokemons;
     } catch (e) {
       throw e;
     }

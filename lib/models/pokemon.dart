@@ -3,16 +3,14 @@ import 'package:flutter/foundation.dart';
 class Pokemon {
   Pokemon({
     @required this.name,
-    @required this.spriteUrl,
+    @required this.url,
   });
 
   factory Pokemon.fromMap(Map<String, dynamic> map) {
-    return Pokemon(
-      name: map['species']['name'],
-      spriteUrl: map['sprites']['front_default'],
-    );
+    final pokemon = Pokemon(name: map['name'], url: map['url']);
+    return pokemon;
   }
 
   final String name;
-  final String spriteUrl;
+  final String url;
 }

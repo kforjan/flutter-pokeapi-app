@@ -1,4 +1,5 @@
 import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class RestClient {
   Future<dynamic> get(String url) async {
@@ -8,6 +9,6 @@ class RestClient {
     if (statusCode < 200 || statusCode >= 400) {
       throw Exception(); //todo: NetworkException
     }
-    return resBody;
+    return jsonDecode(resBody);
   }
 }
