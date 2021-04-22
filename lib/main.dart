@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokemon_api_app/constants/theme.dart';
 import 'package:pokemon_api_app/locator.dart';
 import 'package:pokemon_api_app/ui/home/home_screen.dart';
 
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: Strings.pokedex,
       home: HomeScreen(),
+      theme: themeData,
     );
   }
 }
