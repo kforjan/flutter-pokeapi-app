@@ -15,16 +15,29 @@ class PokemonCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: Padding(
-        padding: const EdgeInsets.all(50.0),
+        padding: const EdgeInsets.all(40.0),
         child: FutureBuilder(
           future: locator<PokemonApi>().getPokemon(pokemonUrl),
           builder: (context, snapshot) {
             Pokemon pokemon = snapshot.data;
             return snapshot.connectionState == ConnectionState.done
-                ? CachedNetworkImage(
-                    imageUrl: pokemon.spriteUrl,
-                    placeholder: (context, url) =>
-                        SvgPicture.asset(Assets.pokeballPlaceholder),
+                ? InkWell(
+                    onTap: () {
+                      showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              title: Center(
+                                child: Text(pokemon.name),
+                              ),
+                            );
+                          });
+                    },
+                    child: CachedNetworkImage(
+                      imageUrl: pokemon.spriteUrl,
+                      placeholder: (context, url) =>
+                          SvgPicture.asset(Assets.pokeballPlaceholder),
+                    ),
                   )
                 : SvgPicture.asset('assets/images/pokeball-svg.svg');
           },
