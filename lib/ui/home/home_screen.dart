@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokemon_api_app/constants/strigns.dart';
 import 'package:pokemon_api_app/data/network/apis/pokemon_url_list_api.dart';
 import 'package:pokemon_api_app/locator.dart';
 import 'package:pokemon_api_app/models/pokemon_list.dart';
@@ -10,7 +11,11 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Center(
+          child: Text(Strings.pokedex),
+        ),
+      ),
       body: FutureBuilder(
           future: locator<PokemonUrlsApi>().getPokemonUrls(),
           builder: (context, snapshot) {
