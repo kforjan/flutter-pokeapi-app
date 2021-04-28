@@ -25,7 +25,7 @@ PokedexApp is a Flutter application that gets a list of season one Pokemon from 
 
 Normal functionality of the application          |  Application functionality without internet connection
 :-------------------------:|:-------------------------:
-![Normal functionality of the application](https://s3.gifyu.com/images/pokemon-basic.gif)  |  ![Application functionality without internet connection](https://s3.gifyu.com/images/pomemon-no-internet.gif))
+![Normal functionality of the application](https://s3.gifyu.com/images/pokemon-basic.gif)  |  ![Application functionality without internet connection](https://s3.gifyu.com/images/pomemon-no-internet.gif)
 
 ## Possible improvements
  * Error handling
