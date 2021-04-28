@@ -1,16 +1,34 @@
-# pokemon_api_app
+# PokedexApp - Pokemon overview app using PokeAPI
+Main goal of this project was working with REST API in flutter.
 
-A new Flutter project.
+## About
+PokedexApp is a Flutter application that gets a list of season one Pokemon from PokeAPI and shows them in a simple grid. PokeAPI is based on the REST architecture and the responses are in the JSON format. Http package and Dart's JSON decoder were for receiving data from the API. 
 
-## Getting Started
+## Setup
+  1. Clone the repository using the link below:
+  ```
+  https://github.com/kforjan/rma-lv3-bird-count-app.git
+  ```
+  2. Go to the project root and execute the following commands:
+  ```
+  flutter pub get
+  flutter run
+  ```
 
-This project is a starting point for a Flutter application.
+## Used packages
+ * [get_it](https://pub.dev/packages/get_it)
+ * [http](https://pub.dev/packages/http)
+ * [flutter_svg](https://pub.dev/packages/flutter_svg)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Preview
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Normal functionality of the application          |  Application functionality without internet connection
+:-------------------------:|:-------------------------:
+![Normal functionality of the application](https://s3.gifyu.com/images/pokemon-basic.gif)  |  ![Application functionality without internet connection](https://s3.gifyu.com/images/pomemon-no-internet.gif))
+
+## Possible improvements
+ * Error handling
+ * Storing images locally after the first download and reducing number of API calls
+ * More details for each Pokemon
+ * State management
