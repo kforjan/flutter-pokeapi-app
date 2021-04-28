@@ -5,9 +5,14 @@ import 'package:pokemon_api_app/locator.dart';
 import 'package:pokemon_api_app/models/pokemon_list.dart';
 import 'package:pokemon_api_app/ui/widgets/pokemon_card.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key key}) : super(key: key);
 
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +25,50 @@ class HomeScreen extends StatelessWidget {
           future: locator<PokemonUrlsApi>().getPokemonUrls(),
           builder: (context, snapshot) {
             final PokemonList data = snapshot.data;
-
+            if (snapshot.hasError) {
+              return Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text('No internet!'),
+                    Text('Please reconnect and try again!'),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    FutureBuilder(
+                      future: Future.delayed(
+                        Duration(seconds: 2),
+                      ),
+                      builder: (context, snapshot) =>
+                          snapshot.connectionState == ConnectionState.done
+                              ? Container(
+                                  height: 50,
+                                  child: ElevatedButton(
+                                    onPressed: () {
+                                      setState(() {});
+                                    },
+                                    child: Text('Retry'),
+                                    style: ButtonStyle(
+                                      backgroundColor:
+                                          MaterialStateProperty.all(
+                                              Theme.of(context).primaryColor),
+                                    ),
+                                  ),
+                                )
+                              : Container(
+                                  height: 50,
+                                  child: Center(
+                                    child: CircularProgressIndicator(
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                          Theme.of(context).primaryColor),
+                                    ),
+                                  ),
+                                ),
+                    ),
+                  ],
+                ),
+              );
+            }
             return snapshot.connectionState == ConnectionState.done
                 ? GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

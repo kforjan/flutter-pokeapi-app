@@ -20,6 +20,9 @@ class PokemonCard extends StatelessWidget {
           future: locator<PokemonApi>().getPokemon(pokemonUrl),
           builder: (context, snapshot) {
             Pokemon pokemon = snapshot.data;
+            if (snapshot.hasError) {
+              return SvgPicture.asset(Assets.pokeballPlaceholder);
+            }
             return snapshot.connectionState == ConnectionState.done
                 ? InkWell(
                     onTap: () {
@@ -39,7 +42,7 @@ class PokemonCard extends StatelessWidget {
                           SvgPicture.asset(Assets.pokeballPlaceholder),
                     ),
                   )
-                : SvgPicture.asset('assets/images/pokeball-svg.svg');
+                : SvgPicture.asset(Assets.pokeballPlaceholder);
           },
         ),
       ),
