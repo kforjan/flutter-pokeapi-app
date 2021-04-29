@@ -1,5 +1,5 @@
 # PokedexApp - Pokemon overview app using PokeAPI
-Main goal of this project was working with REST API in flutter.
+The main goal of this project was to use REST API in Flutter.
 
 ## About
 PokedexApp is a Flutter application that gets a list of season one Pokemon from PokeAPI and shows them in a simple grid. PokeAPI is based on the REST architecture and the responses are in the JSON format. Http package and Dart's JSON decoder were for receiving data from the API. 
