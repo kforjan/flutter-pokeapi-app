@@ -7,7 +7,7 @@ PokedexApp is a Flutter application that gets a list of season one Pokemon from 
 ## Setup
   1. Clone the repository using the link below:
   ```
-  https://github.com/kforjan/rma-lv3-bird-count-app.git
+  https://github.com/kforjan/flutter-pokeapi-app.git
   ```
   2. Go to the project root and execute the following commands:
   ```
