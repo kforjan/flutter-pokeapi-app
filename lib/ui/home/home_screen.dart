@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pokemon_api_app/constants/strigns.dart';
 import 'package:pokemon_api_app/data/network/apis/pokemon_url_list_api.dart';
-import 'package:pokemon_api_app/locator.dart';
+import 'package:pokemon_api_app/injection_container.dart';
 import 'package:pokemon_api_app/models/pokemon_list.dart';
 import 'package:pokemon_api_app/ui/widgets/pokemon_card.dart';
 

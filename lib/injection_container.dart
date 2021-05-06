@@ -6,6 +6,7 @@ import 'package:pokemon_api_app/data/network/rest_client.dart';
 final locator = GetIt.instance;
 
 void setup() {
-  locator.registerLazySingleton(() => PokemonUrlsApi(RestClient()));
-  locator.registerLazySingleton(() => PokemonApi(RestClient()));
+  locator.registerLazySingleton(() => RestClient());
+  locator.registerLazySingleton(() => PokemonUrlsApi(locator()));
+  locator.registerLazySingleton(() => PokemonApi(locator()));
 }

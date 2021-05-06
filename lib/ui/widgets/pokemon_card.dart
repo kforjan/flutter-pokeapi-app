@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pokemon_api_app/constants/assets.dart';
 import 'package:pokemon_api_app/data/network/apis/pokemon_api.dart';
-import 'package:pokemon_api_app/locator.dart';
+import 'package:pokemon_api_app/injection_container.dart';
 import 'package:pokemon_api_app/models/pokemon.dart';
 
 class PokemonCard extends StatelessWidget {
