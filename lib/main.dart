@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:pokemon_api_app/constants/theme.dart';
-import 'package:pokemon_api_app/locator.dart';
+import 'package:pokemon_api_app/injection_container.dart' as di;
 import 'package:pokemon_api_app/ui/home/home_screen.dart';
 
 import 'constants/strigns.dart';
 
 void main() {
-  setup();
+  di.setup();
   runApp(MyApp());
 }
 
