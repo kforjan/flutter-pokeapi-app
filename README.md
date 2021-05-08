@@ -16,9 +16,9 @@ PokedexApp is a Flutter application that gets a list of season one Pokemon from 
   ```
 
 ## Used packages
- * [get_it](https://pub.dev/packages/get_it)
- * [http](https://pub.dev/packages/http)
- * [flutter_svg](https://pub.dev/packages/flutter_svg)
+ * [get_it](https://pub.dev/packages/get_it) &nbsp; - &nbsp; service locator for dependency injection
+ * [http](https://pub.dev/packages/http) &nbsp; - &nbsp; making HTTP requests
+ * [flutter_svg](https://pub.dev/packages/flutter_svg) &nbsp; - &nbsp; widget for rendering SVGs
 
 
 ## Preview
